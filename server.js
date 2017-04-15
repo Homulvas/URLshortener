@@ -21,13 +21,13 @@ app.get('/add/*', function (req, res) {
                 }
             })
             var response = { url: req.headers.host + '/' + urlObj._id }
-            res.send(JSON.stringify(response))
+            res.json(JSON.stringify(response))
 
             db.close();
         })
     } else {
         var error = { error: 'Url seems to be invalid' }
-        res.send(JSON.stringify(error))
+        res.json(JSON.stringify(error))
     }
 })
 
